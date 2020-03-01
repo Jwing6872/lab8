@@ -107,7 +107,7 @@ module MakeStack (Element: SERIALIZE) : (STACK with type element = Element.t) =
 
     let pop_helper (s : stack) : (element * stack) =
       match s with
-      | [] -> raise (Invalid_argument "nothing to pop")
+      | [] -> raise Empty
       | hd :: tl -> (hd, tl)
 
 
